@@ -1,0 +1,20 @@
+{% extends "modals/newtaskmodal.html" %}
+{% block modal-id %}
+    id="taskmodal{{ row.id }}"
+{% endblock modal-id %}
+{% block modal-title %}
+    Task
+{% endblock modal-title %}
+{% block action %}
+    action="{% url 'delete_event' row.id %}"
+{% endblock action %}
+{% block modal-description %}
+    value="{{ row.description }}"
+{% endblock modal-description %}
+{% block modal-footer %}
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+{% endblock modal-footer %}
